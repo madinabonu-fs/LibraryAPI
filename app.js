@@ -14,7 +14,7 @@ const productRouter = require("./routes/productRoutes")
 const app = express()
 
 app.use(express.json())
-app.use(cors({origin:["http://localhost:5173/","https://libraryapi-3rx8.onrender.com"]}))
+app.use(cors({origin:["http://localhost:5173","https://libraryapi-3rx8.onrender.com"]}))
 connectDB()
 app.use("/api", bookRouter)
 app.use("/api", userRouter)
