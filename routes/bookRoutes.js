@@ -6,7 +6,7 @@ const { roleMiddleware } = require("../middlewares/roleMiddleware")
 
 
 bookRouter.get("/books",  bookController.getBooks)
-bookRouter.post("/books", authMiddleware, roleMiddleware("moderator","admin"), bookController.createBook)
+bookRouter.post("/books",  bookController.createBook)
 bookRouter.get("/books/stats", authMiddleware, roleMiddleware("user","moderator","admin"), bookController.getBookStats)
 bookRouter.get("/books/count", authMiddleware, roleMiddleware("user","moderator","admin"), bookController.countBooks)
 bookRouter.get("/books/:id", authMiddleware, roleMiddleware("user","moderator","admin"), bookController.getBookByID)
