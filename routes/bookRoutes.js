@@ -10,7 +10,7 @@ bookRouter.post("/books",  bookController.createBook)
 bookRouter.get("/books/stats", authMiddleware, roleMiddleware("user","moderator","admin"), bookController.getBookStats)
 bookRouter.get("/books/count", authMiddleware, roleMiddleware("user","moderator","admin"), bookController.countBooks)
 bookRouter.get("/books/:id", authMiddleware, roleMiddleware("user","moderator","admin"), bookController.getBookByID)
-bookRouter.put("/books/:id", authMiddleware, roleMiddleware("moderator","admin"), bookController.updateBook)
-bookRouter.delete("/books/:id", authMiddleware, roleMiddleware("admin"), bookController.deleteBook)
+bookRouter.put("/books/:id",  bookController.updateBook)
+bookRouter.delete("/books/:id", bookController.deleteBook)
 
 module.exports = bookRouter
